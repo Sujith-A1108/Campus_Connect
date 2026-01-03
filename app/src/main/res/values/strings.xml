@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Campus_Connect</string>
+    <string name="title_home">Home</string>
+    <string name="title_department">Department</string>
+    <string name="title_events">Events</string>
+    <string name="title_community">Community</string>
+    <string name="title_profile">Profile</string>
 </resources>
