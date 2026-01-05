@@ -21,6 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.ListenerRegistration;
 
 import java.util.List;
+import java.util.ArrayList;
 
 public class ProfileFragment extends Fragment {
 
@@ -116,16 +117,26 @@ public class ProfileFragment extends Fragment {
                 profileAbout.setText(document.getString("about"));
 
                 if (document.contains("skills")) {
-                    List<String> skills = (List<String>) document.get("skills");
-                    if (skills != null) {
-                        skillsContainer.removeAllViews();
-                        for (String skill : skills) {
-                            TextView skillView = new TextView(getContext());
-                            skillView.setText("● " + skill);
-                            skillView.setTextSize(16f);
-                            skillView.setPadding(0, 4, 0, 4);
-                            skillsContainer.addView(skillView);
+                    Object rawSkills = document.get("skills");
+                    List<String> skills = new ArrayList<>();
+                    if (rawSkills instanceof List) {
+                        for (Object o : (List<?>) rawSkills) {
+                            if (o != null) skills.add(o.toString());
                         }
+                    } else if (rawSkills instanceof String) {
+                        String s = (String) rawSkills;
+                        for (String part : s.split("\\s*,\\s*")) {
+                            if (!part.trim().isEmpty()) skills.add(part.trim());
+                        }
+                    }
+
+                    skillsContainer.removeAllViews();
+                    for (String skill : skills) {
+                        TextView skillView = new TextView(getContext());
+                        skillView.setText("● " + skill);
+                        skillView.setTextSize(16f);
+                        skillView.setPadding(0, 4, 0, 4);
+                        skillsContainer.addView(skillView);
                     }
                 }
             } else {

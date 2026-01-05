@@ -40,6 +40,21 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
     implementation(libs.firebase.firestore)
+
+    // Image loading
+    implementation("com.github.bumptech.glide:glide:4.15.1")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.15.1")
+
+    // ML Kit on-device: Image Labeling & Face Detection
+    implementation("com.google.mlkit:image-labeling:17.0.4")
+    implementation("com.google.mlkit:face-detection:16.1.5")
+    // Explicit common dependencies to resolve internal types
+    implementation("com.google.mlkit:common:18.1.0")
+    implementation("com.google.mlkit:vision-common:17.1.0")
+
+    // Firebase Storage for post images
+    implementation(libs.firebase.storage)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
