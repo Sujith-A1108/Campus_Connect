@@ -45,6 +45,9 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.15.1")
     annotationProcessor("com.github.bumptech.glide:compiler:4.15.1")
 
+    // AndroidX SplashScreen (shows a single, consistent launch screen on Android 12+)
+    implementation("androidx.core:core-splashscreen:1.0.1")
+
     // ML Kit on-device: Image Labeling & Face Detection
     implementation("com.google.mlkit:image-labeling:17.0.4")
     implementation("com.google.mlkit:face-detection:16.1.5")
@@ -56,6 +59,10 @@ dependencies {
     implementation(libs.firebase.storage)
 
     testImplementation(libs.junit)
+    // For LiveData and Architecture Components unit testing
+    testImplementation("androidx.arch.core:core-testing:2.2.0")
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    // Espresso contrib for RecyclerView actions
+    androidTestImplementation("androidx.test.espresso:espresso-contrib:3.4.0")
 }

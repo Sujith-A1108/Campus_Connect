@@ -1,0 +1,19 @@
+{
+  "icons": {
+    "home": "@drawable/ic_home",
+    "home_nav": "@drawable/ic_home_nav",
+    "search": "@drawable/ic_search",
+    "profile": "@drawable/ic_profile",
+    "profile_nav": "@drawable/ic_profile_nav",
+    "messages": "@drawable/ic_messages",
+    "like": "@drawable/ic_like",
+    "comment": "@drawable/ic_comment",
+    "share": "@drawable/ic_share",
+    "settings": "@drawable/ic_settings",
+    "star": "@drawable/ic_star_nav",
+    "community": "@drawable/ic_community",
+    "messages_toolbar": "@drawable/ic_messages_toolbar",
+    "edit": "@drawable/ic_edit",
+    "logo": "@drawable/logo"
+  }
+}

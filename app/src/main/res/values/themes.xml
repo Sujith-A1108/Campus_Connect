@@ -2,8 +2,21 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Campus_Connect" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <item name="android:navigationBarColor">@color/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">@color/colorPrimaryVariant</item>
     </style>
 
     <style name="Theme.Campus_Connect" parent="Base.Theme.Campus_Connect" />
+
+    <!-- Launch / splash theme using the AndroidX SplashScreen attributes -->
+    <style name="Theme.Splash" parent="Base.Theme.Campus_Connect">
+        <item name="android:windowBackground">@color/launch_background</item>
+        <item name="android:windowSplashScreenBackground">@color/launch_background</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/logo</item>
+        <item name="android:windowSplashScreenAnimationDuration">220</item>
+        <item name="postSplashScreenTheme">@style/Theme.Campus_Connect</item>
+    </style>
 </resources>

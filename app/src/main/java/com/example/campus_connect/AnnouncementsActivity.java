@@ -116,6 +116,8 @@ public class AnnouncementsActivity extends AppCompatActivity {
                     if (value != null) {
                         for (QueryDocumentSnapshot doc : value) { // <-- CORRECTED THIS LINE
                             Announcement announcement = doc.toObject(Announcement.class);
+                            announcement.setId(doc.getId());
+                            announcement.setCommunityId(communityId);
                             announcementList.add(announcement);
                         }
                     }

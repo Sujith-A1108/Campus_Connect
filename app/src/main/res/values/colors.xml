@@ -2,4 +2,16 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Palette extracted from logo.png -->
+    <color name="colorPrimary">#2C7DAF</color>
+    <color name="colorPrimaryVariant">#0D3555</color>
+    <color name="colorOnPrimary">#FFFFFFFF</color>
+    <color name="appBarBlue">#2B76D2</color>
+    <color name="textPrimary">#222222</color>
+    <color name="textSecondary">#666666</color>
+
+    <!-- App background / launch surface (minimal) -->
+    <color name="background">#FFFFFFFF</color>
+    <color name="launch_background">#FFFFFFFF</color>
 </resources>

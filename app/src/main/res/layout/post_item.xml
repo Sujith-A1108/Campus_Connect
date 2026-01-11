@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Post Header -->
+        <!-- Post Header (avatar + name + options) -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,64 +25,119 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/ic_profile_nav"
-                app:tint="#4169E1" />
+                android:contentDescription="Author avatar"
+                app:tint="@color/colorPrimary" />
 
             <TextView
                 android:id="@+id/post_author_name"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
+                android:layout_weight="1"
                 android:text="Author Name"
                 android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/post_options"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_edit"
+                android:contentDescription="More options" />
         </LinearLayout>
 
-        <!-- Post Image -->
-        <ImageView
-            android:id="@+id/post_image"
+        <!-- Post Image with overlay caption -->
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:background="#E0E0E0"
-            android:scaleType="centerCrop" />
+            android:layout_height="wrap_content">
 
-        <!-- Post Caption -->
+            <ImageView
+                android:id="@+id/post_image"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:background="#E0E0E0"
+                android:scaleType="centerCrop" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_gravity="bottom"
+                android:background="#80000000" />
+
+            <TextView
+                android:id="@+id/post_caption_overlay"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_gravity="bottom"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:maxLines="2"
+                android:ellipsize="end" />
+        </FrameLayout>
+
         <TextView
-            android:id="@+id/post_caption"
+            android:id="@+id/announcement_status"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:text="This is a sample caption for the post." />
+            android:paddingStart="12dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="4dp"
+            android:textSize="12sp"
+            android:textColor="@color/textSecondary"
+            android:visibility="gone" />
 
-        <!-- Action Buttons -->
+        <!-- Social actions and counts -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
+            android:paddingTop="8dp"
             android:paddingBottom="12dp">
 
             <ImageView
                 android:id="@+id/like_button"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_like" />
+                android:src="@drawable/ic_like"
+                android:contentDescription="Like post" />
+
+            <TextView
+                android:id="@+id/like_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="0" />
 
             <ImageView
                 android:id="@+id/comment_button"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginStart="16dp"
-                android:src="@drawable/ic_comment" />
+                android:src="@drawable/ic_comment"
+                android:contentDescription="Comments" />
+
+            <TextView
+                android:id="@+id/comment_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="0" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
 
             <ImageView
                 android:id="@+id/share_button"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_marginStart="16dp"
-                android:src="@drawable/ic_share" />
+                android:src="@drawable/ic_share"
+                android:contentDescription="Share post" />
 
         </LinearLayout>
-
     </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>

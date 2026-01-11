@@ -16,7 +16,7 @@
         <activity
             android:name=".SplashActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:theme="@style/Theme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -44,6 +44,9 @@
             android:exported="false" />
         <activity
             android:name=".CollegeFeedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PostDetailActivity"
             android:exported="false" />
         <activity
             android:name=".ConnectionsActivity"
